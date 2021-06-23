@@ -1,0 +1,20 @@
+// Fonts:
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+// Abstract:
+@import "./styles/abstract/variables";
+@import "./styles/abstract/mixins";
+
+// Base:
+@import "./styles/base/base";
+@import "./styles/base/typography";
+
+// Components:
+@import "./styles/components/Nav";
+@import "./styles/components/moviecard";
+
+// Screens:
+@import "./styles/screens/movies";
+@import "./styles/screens/moviedetails";
+@import "./styles/screens/home";
