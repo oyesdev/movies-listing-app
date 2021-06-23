@@ -32,3 +32,40 @@
     padding: 0.8rem 1rem;
   }
 }
+
+@media screen and (max-width: 1080px) {
+  .detailCard {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .detailCard {
+    height: 35rem;
+    &__image {
+      width: 65%;
+      img {
+        height: 35rem;
+      }
+    }
+    &__content {
+      padding: 0.4rem 0.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .detailCard {
+    height: 28rem;
+    &__image {
+      height: 28rem;
+      img {
+        height: 28rem;
+      }
+    }
+
+    &__content {
+      padding: 0.3rem;
+    }
+  }
+}
