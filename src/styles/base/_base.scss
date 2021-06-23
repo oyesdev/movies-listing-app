@@ -7,3 +7,35 @@
 html {
   font-size: 62.5%; //1rem = 16px; (1/16)*100; => 1rem = 10px;
 }
+
+// ::-webkit-scrollbar-track {
+//   background: $color-white-light;
+// }
+
+// ::-webkit-scrollbar-thumb {
+//   background: #888;
+// }
+
+// ::-webkit-scrollbar-thumb:hover {
+//   background: #555;
+// }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  background: $color-grey-light;
+  cursor: pointer;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}

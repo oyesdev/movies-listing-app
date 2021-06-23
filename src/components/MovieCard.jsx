@@ -7,7 +7,7 @@ const MovieCard = () => {
   return movies.map((movie) => {
     const { id, title, release_date, poster_path } = movie;
     const IMAGE_URL = `https://image.tmdb.org/t/p/w500/${poster_path}`;
-    const releaseYear = new Date(release_date).getFullYear();
+    const releaseYear = new Date(release_date).getFullYear().toString();
 
     return (
       <div className="card" key={id}>

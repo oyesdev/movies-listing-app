@@ -3,12 +3,12 @@ import {BrowserRouter, Route, Switch} from "react-router-dom"
 
 // Components:
 import Nav from './components/Navbar/Nav';
-import Movies from "./Screens/Movies";
+import Home from "./Screens/Home";
 import Trending from './Screens/Trending';
 import Shows from './Screens/Shows';
 import MovieDetails from './Screens/MovieDetails';
 import ShowDetails from './Screens/ShowDetails';
-import Home from './Screens/Home';
+import Movies from './Movie/Movies';
 
 function App() {
   return (

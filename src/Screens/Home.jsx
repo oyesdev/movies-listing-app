@@ -1,38 +1,51 @@
 import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+
+// Actions:
+import { setMovies } from "../redux/actions/movieActions";
+import { setShows } from "../redux/actions/seriesActions";
+
+// Components:
+import MovieCard from "../components/MovieCard";
+import ShowCard from "../components/ShowCard";
 
 const Home = () => {
+  const dispatch = useDispatch();
   useEffect(() => {
-    async function fetchGenre() {
-      const res = await fetch(
-        `https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
-      );
-      const data = await res.json();
+    const fetchMovies = () => {
+      fetch(
+        `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          dispatch(setMovies(data.results));
+        })
+        .catch((error) => console.log(error));
+    };
+    const fetchShows = () => {
+      fetch(
+        `https://api.themoviedb.org/3/tv/airing_today?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          dispatch(setShows(data.results));
+        })
+        .catch((error) => console.log(error));
+    };
 
-      const genreId = data.genres.map((genre) => {
-        return genre.id;
-      });
-
-      console.log(genreId);
-    }
-    fetchGenre();
-  }, []);
+    fetchMovies();
+    fetchShows();
+  }, [dispatch]);
 
   return (
-    <div className="home-screen">
-      <div className="home-card">
-        <h2>Horror</h2>
+    <div className="home">
+      <h2 className="home__heading">Movies</h2>
+      <div className="movies">
+        <MovieCard />
       </div>
-      <div className="home-card">
-        <h2>Adventure</h2>
-      </div>
-      <div className="home-card">
-        <h2>Action</h2>
-      </div>
-      <div className="home-card">
-        <h2>Drama</h2>
-      </div>
-      <div className="home-card">
-        <h2>Comedy</h2>
+      <h2 className="home__heading">Series</h2>
+      <div className="movies">
+        <ShowCard />
       </div>
     </div>
   );

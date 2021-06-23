@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-
-// Actions:
 import { setShows } from "../redux/actions/seriesActions";
 
 // Components:
@@ -21,8 +19,7 @@ const Shows = () => {
         .catch((error) => console.log(error));
     };
     fetchShows();
-  }, [dispatch]);
-
+  });
   return (
     <div className="home">
       <div className="movies">
